@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Edit {{ page }} Page
+{% endblock %}
+
+{% block body %}
+    <form action="{% url 'wiki:edited' %}">
+        <h2>Edit</h2>
+        <textarea name="content">{{ entry }}</textarea>
+        <input type="hidden" name="title" value="{{ page }}">
+        <br>
+        <input type="submit">
+    </form>
+{% endblock %}
